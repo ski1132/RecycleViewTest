@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="enter_string_here">enter String here</string>
+    <string name="tests">Tests</string>
+    <string name="enter_naja">Enter naja</string>
+    <string name="enter_naja2"/>
+    <string name="address">address</string>
+    <string name="Name">Name</string>
+</resources>

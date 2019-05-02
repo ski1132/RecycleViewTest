@@ -18,8 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView?.layoutManager = LinearLayoutManager(this)
         val arrayProfile : ArrayList<ProfileModel> = arrayListOf()
-//        ProfileModel()
-
         arrayProfile.add(ProfileModel(name="Name1", address = "address1"))
         arrayProfile.add(ProfileModel(name="Name2", address = "address1"))
         arrayProfile.add(ProfileModel(name="Name3", address = "address1"))

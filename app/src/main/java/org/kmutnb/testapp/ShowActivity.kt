@@ -10,8 +10,8 @@ class ShowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
 
-        show1.text = intent.getStringExtra("text1")
-        show2.text = intent.getStringExtra("text2")
+//        show1.text = intent.getStringExtra("text1")
+//        show2.text = intent.getStringExtra("text2")
 
     }
 }

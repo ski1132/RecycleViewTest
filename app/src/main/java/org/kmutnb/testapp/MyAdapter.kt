@@ -27,7 +27,7 @@ class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) :
         fun bind(position: Int) {
             val nameText = view.nameText
             val addressText = view.addressText
-            nameText.text = items[position].ShopName
+            nameText.text = items[position].shopName
             addressText.text = items[position].address
         }
     }

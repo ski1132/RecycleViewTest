@@ -26,6 +26,7 @@ class TestFragment : Fragment() {
         activity?.also {
             var arrayData: ArrayList<DataModel>? = null
             recyclerView?.layoutManager = LinearLayoutManager(it)
+
             arrayData = arrayListOf()
             arrayData.add(DataModel(shopName = "shopName1", address = "address1"))
             arrayData.add(DataModel(shopName = "shopName2", address = "address1"))

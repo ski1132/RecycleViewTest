@@ -27,17 +27,18 @@ class TestFragment : Fragment() {
             var arrayData: ArrayList<DataModel>? = null
             recyclerView?.layoutManager = LinearLayoutManager(it)
 
+
             arrayData = arrayListOf()
-            arrayData.add(DataModel(shopName = "shopName1", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName2", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName3", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName4", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName5", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName6", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName7", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName8", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName9", address = "address1"))
-            arrayData.add(DataModel(shopName = "shopName10", address = "address1"))
+            arrayData.add(DataModel(shopName = "dataName1", address = "address1",profileModel = ProfileModel(name = "name1", src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName2", address = "src2",profileModel = ProfileModel(name = "name2", src = "https://www.honestdocs.co/system/blog_articles/main_hero_images/000/001/755/large/iStock-512202044_L.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName3", address = "address3",profileModel = ProfileModel(name = "name3", src = "https://www.petcitiz.info/wp-content/uploads/2017/11/01-1.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName4", address = "address4",profileModel = ProfileModel(name = "name4", src = "https://lifestyle.campus-star.com/app/uploads/2018/08/cat-world.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName5", address = "address5",profileModel = ProfileModel(name = "name5", src = "src5" )))
+            arrayData.add(DataModel(shopName = "dataName6", address = "address6",profileModel = ProfileModel(name = "name6", src = "src6" )))
+            arrayData.add(DataModel(shopName = "dataName7", address = "address7",profileModel = ProfileModel(name = "name7", src = "src7" )))
+            arrayData.add(DataModel(shopName = "dataName8", address = "address8",profileModel = ProfileModel(name = "name8", src = "src8" )))
+            arrayData.add(DataModel(shopName = "dataName9", address = "address9",profileModel = ProfileModel(name = "name9", src = "src9" )))
+            arrayData.add(DataModel(shopName = "dataName10", address = "address10",profileModel = ProfileModel(name = "name10", src = "src10" )))
             recyclerView.adapter = MyAdapter(arrayData, it)
         }
     }

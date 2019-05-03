@@ -28,11 +28,12 @@ class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) :
         fun bind(position: Int) {
             val nameText = view.nameText
             val addressText = view.addressText
+            val nameImg = view.imageText
             val showImg = view.showImg
             nameText.text = items[position].shopName
             addressText.text = items[position].address
-
-            Glide.with(context).load("https://s3.amazonaws.com/appsdeveloperblog/Micky.jpg").into(showImg)
+            nameImg.text = items[position].profileModel.name
+            Glide.with(context).load(items[position].profileModel.src).into(showImg)
         }
     }
 }

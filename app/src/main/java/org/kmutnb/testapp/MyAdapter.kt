@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_profile.view.*
 
 class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
@@ -27,8 +28,11 @@ class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) :
         fun bind(position: Int) {
             val nameText = view.nameText
             val addressText = view.addressText
+            val showImg = view.showImg
             nameText.text = items[position].shopName
             addressText.text = items[position].address
+
+            Glide.with(context).load("https://s3.amazonaws.com/appsdeveloperblog/Micky.jpg").into(showImg)
         }
     }
 }

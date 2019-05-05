@@ -3,6 +3,7 @@ package org.kmutnb.testapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val testFragment = ShopFragment()
-        supportFragmentManager.beginTransaction().add(R.id.fragment, testFragment).commit()
-
+        supportFragmentManager.beginTransaction().replace(R.id.fragment, ShopFragment()).commit()
 
     }
 

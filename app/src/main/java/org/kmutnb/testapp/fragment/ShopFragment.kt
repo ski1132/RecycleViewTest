@@ -1,4 +1,4 @@
-package org.kmutnb.testapp
+package org.kmutnb.testapp.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,6 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_shop.*
+import org.kmutnb.testapp.adapter.MyAdapter
+import org.kmutnb.testapp.onclick.OnClickItem
+import org.kmutnb.testapp.R
+import org.kmutnb.testapp.model.DataModel
+import org.kmutnb.testapp.model.ProfileModel
 
 
 class ShopFragment : Fragment(), OnClickItem {
@@ -40,7 +45,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address1",
                     profileModel = ProfileModel(
                         name = "name1",
-                        src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg"
+                        src = "https://th-live-01.slatic.net/original/df885ae3300c28af1debb7e1321737d7.jpg"
                     )
                 )
             )
@@ -50,7 +55,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "src2",
                     profileModel = ProfileModel(
                         name = "name2",
-                        src = "https://www.honestdocs.co/system/blog_articles/main_hero_images/000/001/755/large/iStock-512202044_L.jpg"
+                        src = "https://www.cataccessories.biz/wp-content/uploads/2017/08/2-1245-50656551-a26936ecd8ba4ccf26d10d44bbe043d4-zoom.jpg"
                     )
                 )
             )
@@ -60,7 +65,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address3",
                     profileModel = ProfileModel(
                         name = "name3",
-                        src = "https://www.petcitiz.info/wp-content/uploads/2017/11/01-1.jpg"
+                        src = "https://www.cataccessories.biz/wp-content/uploads/2017/07/Rolling-Scratch0.jpg"
                     )
                 )
             )
@@ -70,7 +75,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address4",
                     profileModel = ProfileModel(
                         name = "name4",
-                        src = "https://lifestyle.campus-star.com/app/uploads/2018/08/cat-world.jpg"
+                        src = "http://e.lnwfile.com/_/e/_raw/wk/y4/er.jpg"
                     )
                 )
             )
@@ -80,7 +85,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address5",
                     profileModel = ProfileModel(
                         name = "name5",
-                        src = "https://f.ptcdn.info/323/013/000/1387033442-695968img1-o.jpg"
+                        src = "https://ae01.alicdn.com/kf/HTB1VX87SpXXXXc4XXXXq6xXFXXXi/-.jpg_640x640.jpg"
                     )
                 )
             )
@@ -90,47 +95,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address6",
                     profileModel = ProfileModel(
                         name = "name6",
-                        src = "http://www.yespetshop.com/private_folder/kitten-1.jpg"
-                    )
-                )
-            )
-            arrayData.add(
-                DataModel(
-                    shopName = "dataName7",
-                    address = "address7",
-                    profileModel = ProfileModel(
-                        name = "name7",
-                        src = "http://www.thaiticketmajor.com/bus/imgUpload/newsLarge5756_750.jpg"
-                    )
-                )
-            )
-            arrayData.add(
-                DataModel(
-                    shopName = "dataName8",
-                    address = "address8",
-                    profileModel = ProfileModel(
-                        name = "name8",
-                        src = "https://dog-vs-cat.com/wp-content/uploads/2018/01/130476_0_620.jpg"
-                    )
-                )
-            )
-            arrayData.add(
-                DataModel(
-                    shopName = "dataName9",
-                    address = "address9",
-                    profileModel = ProfileModel(
-                        name = "name9",
-                        src = "https://thematter.co/wp-content/uploads/2016/07/maxresdefault-2.jpg"
-                    )
-                )
-            )
-            arrayData.add(
-                DataModel(
-                    shopName = "dataName10",
-                    address = "address10",
-                    profileModel = ProfileModel(
-                        name = "name10",
-                        src = "https://www.girlsallaround.com/wp-content/uploads/2014/08/107371.jpg"
+                        src = "https://3.3qdc.com/p-dit/2015/03/09/p-dit_cat-13_0.out.jpg"
                     )
                 )
             )
@@ -141,7 +106,8 @@ class ShopFragment : Fragment(), OnClickItem {
     override fun onClickItem(view: View, dataModel: DataModel) {
         Toast.makeText(context, "show DataName ${dataModel.shopName}", Toast.LENGTH_SHORT).show()
         activity?.also {
-            it.supportFragmentManager.beginTransaction().replace(R.id.fragment, DetailFragment.newInstance(dataModel)).addToBackStack(null).commit()
+            it.supportFragmentManager.beginTransaction().replace(R.id.fragment, DetailFragment.newInstance(dataModel))
+                .addToBackStack(null).commit()
         }
     }
 }

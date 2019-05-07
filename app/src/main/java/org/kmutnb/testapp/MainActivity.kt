@@ -3,7 +3,7 @@ package org.kmutnb.testapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import org.kmutnb.testapp.fragment.ShopFragment
 
 class MainActivity : AppCompatActivity() {
 

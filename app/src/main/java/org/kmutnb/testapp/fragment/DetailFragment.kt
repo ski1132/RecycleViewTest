@@ -1,5 +1,6 @@
-package org.kmutnb.testapp
+package org.kmutnb.testapp.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,9 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detail.*
-import kotlinx.android.synthetic.main.fragment_shop.*
+import org.kmutnb.testapp.CustomerActivity
+import org.kmutnb.testapp.onclick.OnClickCustomer
+import org.kmutnb.testapp.R
+import org.kmutnb.testapp.adapter.DetailAdapter
+import org.kmutnb.testapp.model.CommentModel
+import org.kmutnb.testapp.model.DataModel
 
-class DetailFragment : Fragment() {
+class DetailFragment : Fragment() , OnClickCustomer {
+
+
 
     companion object {
         fun newInstance(dataModel: DataModel): DetailFragment {
@@ -30,17 +38,17 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.also {
-            var arrayData: ArrayList<CommentModel>? = null
+            val arrayData: ArrayList<CommentModel>?
 
             recyclerComment?.layoutManager = LinearLayoutManager(it)
 
             arrayData = arrayListOf()
             arrayData.add(
                 CommentModel(
-                        src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg",
-                        comment = "is so Good !!",
-                        rating = 4
-                    )
+                    src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg",
+                    comment = "is so Good !!",
+                    rating = 4
+                )
             )
             arrayData.add(
                 CommentModel(
@@ -58,18 +66,35 @@ class DetailFragment : Fragment() {
             )
 
 
-            recyclerComment.adapter = DetailAdapter(arrayData, it)
+            recyclerComment.adapter = DetailAdapter(arrayData, it, this)
         }
         activity?.also {
-            val arrayData: ArrayList<DataModel>? = null
             recyclerComment?.layoutManager = LinearLayoutManager(it)
             arguments?.getParcelable<DataModel>("KEY_DATA_MODEL")?.also { dataModel ->
                 tvName.text = dataModel.profileModel.name
                 tvShopName.text = dataModel.shopName
                 tvAddress.text = dataModel.address
-                Glide.with(context).load(dataModel.profileModel.src).into(imgProFile)
+                Glide.with(context).load(dataModel.profileModel.src).into(imgProDuct)
 
             }
+        }
+    }
+    override fun onClickItem(view: View, commentModel: CommentModel) {
+        activity?.also {
+            recyclerComment?.layoutManager = LinearLayoutManager(it)
+            val dataModel =arguments?.getParcelable<DataModel>("KEY_DATA_MODEL")
+                val intent = Intent(context, CustomerActivity::class.java)
+                intent.putExtras(
+                    Bundle().apply {
+                        putParcelable("KEY_DATA_MODEL",dataModel)
+                        putParcelable("KEY_DATA_COMMENT",commentModel)
+                    }
+                )
+                startActivity(intent)
+
+
+
+
         }
     }
 

@@ -1,4 +1,4 @@
-package org.kmutnb.testapp
+package org.kmutnb.testapp.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

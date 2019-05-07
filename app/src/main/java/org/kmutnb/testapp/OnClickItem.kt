@@ -1,5 +1,7 @@
 package org.kmutnb.testapp
 
-interface OnClickItem{
+import android.view.View
 
+interface OnClickItem {
+    fun onClickItem(view: View, dataModel: DataModel)
 }

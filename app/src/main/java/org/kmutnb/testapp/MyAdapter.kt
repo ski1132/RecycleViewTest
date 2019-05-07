@@ -13,7 +13,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_shop.view.*
 import android.view.View.OnClickListener as OnClickListener1
 
-class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class MyAdapter(val items: ArrayList<DataModel>, private val context: Context, val onClickItem: OnClickItem) :
+    RecyclerView.Adapter<ViewHolder>() {
     override fun onBindViewHolder(view: RecyclerView.ViewHolder, position: Int) {
         val viewHolder = view as ViewHolder
         viewHolder.bind(position)
@@ -42,12 +43,10 @@ class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) :
             Glide.with(context).load(items[position].profileModel.src).into(showImg)
 
             view.setOnClickListener {
-                val numPosition = adapterPosition+1
+                val numPosition = adapterPosition + 1
                 Log.d(TAG, "onClick_in_setOnClick: $numPosition")
 
-                Toast.makeText(context,"show DataName $numPosition",Toast.LENGTH_SHORT).show()
-                DetailAdapter(items,context,numPosition)
-
+                onClickItem.onClickItem(it, items[position])
             }
         }
 

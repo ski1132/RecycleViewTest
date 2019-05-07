@@ -1,9 +1,7 @@
 package org.kmutnb.testapp
 
-import android.content.ContentValues
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +21,7 @@ class DetailAdapter  (val items: ArrayList<DataModel>, private val context: Cont
     }
 
     override fun onBindViewHolder(view: ViewHolder1, position: Int) {
-        val viewHolder = view as MyAdapter.ViewHolder
+        val viewHolder = view as ViewHolder
         viewHolder.bind(position)
     }
     inner class ViewHolder(private val view: View) : ViewHolder1(view) {

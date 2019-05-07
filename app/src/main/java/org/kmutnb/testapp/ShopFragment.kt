@@ -12,6 +12,12 @@ import kotlinx.android.synthetic.main.fragment_shop.*
 
 class ShopFragment : Fragment(), OnClickItem {
 
+    companion object {
+        fun newInstance(): ShopFragment {
+            val fragment = ShopFragment()
+            return fragment
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Get the custom view for this fragment layout
@@ -134,7 +140,9 @@ class ShopFragment : Fragment(), OnClickItem {
 
     override fun onClickItem(view: View, dataModel: DataModel) {
         Toast.makeText(context, "show DataName ${dataModel.shopName}", Toast.LENGTH_SHORT).show()
-
+        activity?.also {
+            it.supportFragmentManager.beginTransaction().replace(R.id.fragment, DetailFragment.newInstance(dataModel)).commit()
+        }
     }
 }
 

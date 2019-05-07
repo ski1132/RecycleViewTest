@@ -1,9 +1,7 @@
 package org.kmutnb.testapp
 
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.ViewHolder
 import android.util.Log
@@ -12,8 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.fragment_shop.*
-import kotlinx.android.synthetic.main.item_profile.view.*
+import kotlinx.android.synthetic.main.item_shop.view.*
 import android.view.View.OnClickListener as OnClickListener1
 
 class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
@@ -27,7 +24,7 @@ class MyAdapter(val items: ArrayList<DataModel>, private val context: Context) :
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_profile, viewGroup, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_shop, viewGroup, false)
         return ViewHolder(view)
     }
 

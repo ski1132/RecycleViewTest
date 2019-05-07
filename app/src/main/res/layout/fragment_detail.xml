@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".DetailFragment">
-
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+<LinearLayout
+        android:id="@+id/detailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+                android:id="@+id/showImg"
+
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="252dp"
+                android:layout_height="199dp"
+                android:orientation="horizontal"
+                android:contentDescription="@string/Name"
+
+        />
+        <TextView
+                android:id="@+id/imageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/image"/>
+        <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/Name"/>
+        <TextView
+                android:id="@+id/addressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/address"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerComment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:scrollbars="vertical"/>
 
-</FrameLayout>
+    </LinearLayout>

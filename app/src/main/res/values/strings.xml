@@ -6,9 +6,10 @@
     <string name="enter_naja2"/>
     <string name="address">address</string>
     <string name="Name">Name</string>
-
+    <string name="image"> Image </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Second_fragment">Hello Second fragment</string>
     <string name="next_page">Next Page</string>
+    <string name="comment">comment</string>
 </resources>

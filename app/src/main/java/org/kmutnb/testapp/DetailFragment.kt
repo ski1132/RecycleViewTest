@@ -4,9 +4,12 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_detail.*
+import kotlinx.android.synthetic.main.fragment_shop.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,79 +27,35 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class DetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
+        activity?.also {
+            var arrayData: ArrayList<DataModel>? = null
+            recyclerComment?.layoutManager = LinearLayoutManager(it)
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+
+            arrayData = arrayListOf()
+            arrayData.add(DataModel(shopName = "dataName1", address = "address1",profileModel = ProfileModel(name = "name1", src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName2", address = "src2",profileModel = ProfileModel(name = "name2", src = "https://www.honestdocs.co/system/blog_articles/main_hero_images/000/001/755/large/iStock-512202044_L.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName3", address = "address3",profileModel = ProfileModel(name = "name3", src = "https://www.petcitiz.info/wp-content/uploads/2017/11/01-1.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName4", address = "address4",profileModel = ProfileModel(name = "name4", src = "https://lifestyle.campus-star.com/app/uploads/2018/08/cat-world.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName5", address = "address5",profileModel = ProfileModel(name = "name5", src = "https://f.ptcdn.info/323/013/000/1387033442-695968img1-o.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName6", address = "address6",profileModel = ProfileModel(name = "name6", src = "http://www.yespetshop.com/private_folder/kitten-1.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName7", address = "address7",profileModel = ProfileModel(name = "name7", src = "http://www.thaiticketmajor.com/bus/imgUpload/newsLarge5756_750.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName8", address = "address8",profileModel = ProfileModel(name = "name8", src = "https://dog-vs-cat.com/wp-content/uploads/2018/01/130476_0_620.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName9", address = "address9",profileModel = ProfileModel(name = "name9", src = "https://thematter.co/wp-content/uploads/2016/07/maxresdefault-2.jpg" )))
+            arrayData.add(DataModel(shopName = "dataName10", address = "address10",profileModel = ProfileModel(name = "name10", src = "https://www.girlsallaround.com/wp-content/uploads/2014/08/107371.jpg" )))
+            recyclerComment.adapter = DetailAdapter(arrayData, it,1)
         }
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

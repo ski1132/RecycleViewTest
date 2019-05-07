@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_shop.*
 import org.kmutnb.testapp.adapter.MyAdapter
-import org.kmutnb.testapp.onclick.OnClickItem
+import org.kmutnb.testapp.interfaces.OnClickItem
 import org.kmutnb.testapp.R
 import org.kmutnb.testapp.model.DataModel
 import org.kmutnb.testapp.model.ProfileModel

@@ -1,4 +1,4 @@
-package org.kmutnb.testapp.onclick
+package org.kmutnb.testapp.interfaces
 
 import android.view.View
 import org.kmutnb.testapp.model.DataModel

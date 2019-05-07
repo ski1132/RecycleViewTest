@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_detail.*
-import org.kmutnb.testapp.CustomerActivity
-import org.kmutnb.testapp.onclick.OnClickCustomer
+import org.kmutnb.testapp.activity.CustomerActivity
+import org.kmutnb.testapp.interfaces.OnClickCustomer
 import org.kmutnb.testapp.R
 import org.kmutnb.testapp.adapter.DetailAdapter
 import org.kmutnb.testapp.model.CommentModel

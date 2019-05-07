@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_shop.view.*
-import org.kmutnb.testapp.onclick.OnClickItem
+import org.kmutnb.testapp.interfaces.OnClickItem
 import org.kmutnb.testapp.R
 import org.kmutnb.testapp.model.DataModel
 import android.view.View.OnClickListener as OnClickListener1

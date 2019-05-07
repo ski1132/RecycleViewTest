@@ -30,8 +30,8 @@ class ShopFragment : Fragment(), OnClickItem {
 
         activity?.also {
             var arrayData: ArrayList<DataModel>? = null
-            recyclerView?.layoutManager = LinearLayoutManager(it)
 
+            recyclerView?.layoutManager = LinearLayoutManager(it)
 
             arrayData = arrayListOf()
             arrayData.add(

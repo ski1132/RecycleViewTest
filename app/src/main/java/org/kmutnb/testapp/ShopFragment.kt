@@ -141,7 +141,7 @@ class ShopFragment : Fragment(), OnClickItem {
     override fun onClickItem(view: View, dataModel: DataModel) {
         Toast.makeText(context, "show DataName ${dataModel.shopName}", Toast.LENGTH_SHORT).show()
         activity?.also {
-            it.supportFragmentManager.beginTransaction().replace(R.id.fragment, DetailFragment.newInstance(dataModel)).commit()
+            it.supportFragmentManager.beginTransaction().replace(R.id.fragment, DetailFragment.newInstance(dataModel)).addToBackStack(null).commit()
         }
     }
 }

@@ -2,13 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/ng_person"
-
+            android:icon="@drawable/ic_person"
+            android:iconTint="@color/design_default_color_primary"
+            android:enabled="true"
             android:title="Person"/>
     <item
             android:id="@+id/ng_detail"
+            android:icon="@drawable/ic_person"
+            android:iconTint="@color/cardview_light_background"
+            android:enabled="true"
             android:title="DetailShop"/>
     <item
             android:id="@+id/ng_logout"
+            android:icon="@drawable/ic_person"
+            android:enabled="true"
             android:title="Setting"/>
 
 </menu>

@@ -1,21 +1,27 @@
 package org.kmutnb.testapp.adapter
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import android.support.v4.app.FragmentPagerAdapter
 import org.kmutnb.testapp.fragment.DetailCustomerFragment
+import org.kmutnb.testapp.fragment.DetailFragment
+import org.kmutnb.testapp.fragment.DetailShopFragment
 import org.kmutnb.testapp.model.DataModel
 
-class PagerAdapter(fragmentManager: FragmentManager) :
-    FragmentStatePagerAdapter(fragmentManager) {
+class PagerAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
-    // 2
-    override fun getItem(position: Int): Fragment {
-        return DetailCustomerFragment.newInstance(movies[position])
+    override fun getItem(position: Int): Fragment? {
+        var fragment: Fragment? = null
+        when (position) {
+            0 -> fragment = DetailCustomerFragment()
+            1 -> fragment = DetailShopFragment()
+        }
+        return fragment
     }
 
-    // 3
     override fun getCount(): Int {
-        return movies.size
+        return 3
     }
+
 }

@@ -13,16 +13,13 @@ import org.kmutnb.testapp.R
 import org.kmutnb.testapp.model.CommentModel
 
 class DetailCustomerFragment : Fragment() {
-    private lateinit var commentModel: Parcelable
+    private lateinit var commentModel: CommentModel
     companion object {
 
-        fun newInstance(commentModel: Parcelable): DetailCustomerFragment {
+        fun newInstance(commentModel: CommentModel): DetailCustomerFragment {
 
-            val bundle = Bundle()
-            bundle.putParcelable("KEY_comment_MODEL", commentModel)
             val fragment = DetailCustomerFragment()
-            fragment.arguments = bundle
-            Log.e("in New = ",fragment.arguments.toString())
+            fragment.commentModel = commentModel
             return fragment
         }
     }
@@ -31,16 +28,16 @@ class DetailCustomerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        if(arguments != null)
-        {
-            val commentModel = arguments?.getParcelable<CommentModel>("KEY_comment_MODEL")
-            Log.d("Showwww", commentModel.toString())
-            Glide.with(context).load(commentModel?.src).into(showImg)
-            cus_id.text = commentModel?.name
-        }
+        Log.e("in Create View = ",commentModel.src)
 
 
         return inflater.inflate(R.layout.fragment_detail_customer, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Glide.with(activity).load(commentModel.src).into(showImg)
+        cus_id.text = commentModel.name
     }
 
 }

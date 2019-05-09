@@ -14,4 +14,7 @@
     <string name="comment">comment</string>
     <string name="hello_fragment">Hello fragment</string>
     <string name="logout">Logout</string>
+    <string name="setting">Setting</string>
+    <string name="detailshop">DetailShop</string>
+    <string name="person">Person</string>
 </resources>

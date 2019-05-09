@@ -2,20 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/ng_person"
-            android:icon="@drawable/ic_person"
-            android:iconTint="@color/design_default_color_primary"
+            android:icon="@drawable/baseline_account_circle_white_18"
             android:enabled="true"
-            android:title="Person"/>
+            android:title="@string/person"/>
     <item
             android:id="@+id/ng_detail"
-            android:icon="@drawable/ic_person"
-            android:iconTint="@color/cardview_light_background"
+            android:icon="@drawable/baseline_add_shopping_cart_white_18"
+
             android:enabled="true"
-            android:title="DetailShop"/>
+            android:title="@string/detailshop"/>
     <item
             android:id="@+id/ng_logout"
-            android:icon="@drawable/ic_person"
+            android:icon="@drawable/baseline_settings_white_18"
             android:enabled="true"
-            android:title="Setting"/>
+            android:title="@string/setting"/>
 
 </menu>

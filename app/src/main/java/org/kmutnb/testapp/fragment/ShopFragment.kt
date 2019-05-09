@@ -75,7 +75,7 @@ class ShopFragment : Fragment(), OnClickItem {
                     address = "address4",
                     profileModel = ProfileModel(
                         name = "name4",
-                        src = "http://e.lnwfile.com/_/e/_raw/wk/y4/er.jpg"
+                        src = "https://odditymall.com/includes/content/upload/whack-a-mouse-cat-toy-4460.jpg"
                     )
                 )
             )

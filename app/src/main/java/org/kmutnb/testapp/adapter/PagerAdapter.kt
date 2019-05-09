@@ -1,14 +1,12 @@
 package org.kmutnb.testapp.adapter
 
-import android.os.Bundle
+import android.os.Parcelable
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import org.kmutnb.testapp.fragment.DetailCustomerFragment
-import org.kmutnb.testapp.fragment.DetailFragment
 import org.kmutnb.testapp.fragment.DetailShopFragment
 import org.kmutnb.testapp.fragment.SettingFragment
-import org.kmutnb.testapp.model.DataModel
 
 class PagerAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -16,8 +14,8 @@ class PagerAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdap
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = DetailCustomerFragment()
-            1 -> fragment = DetailShopFragment()
-            2 -> fragment = SettingFragment()
+//            1 -> fragment = DetailShopFragment()
+//            2 -> fragment = SettingFragment()
         }
         return fragment
     }

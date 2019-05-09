@@ -46,6 +46,7 @@ class DetailFragment : Fragment() , OnClickCustomer {
             arrayData.add(
                 CommentModel(
                     src = "https://i.ytimg.com/vi/hwhHyxN0MSk/maxresdefault.jpg",
+                    name = "Cat Master69",
                     comment = "is so Good !!",
                     rating = 4
                 )
@@ -53,6 +54,7 @@ class DetailFragment : Fragment() , OnClickCustomer {
             arrayData.add(
                 CommentModel(
                     src = "https://dog-vs-cat.com/wp-content/uploads/2018/01/130476_0_620.jpg",
+                    name = "Monter Cat",
                     comment = "So Cute (OwO)",
                     rating = 2
                 )
@@ -60,6 +62,7 @@ class DetailFragment : Fragment() , OnClickCustomer {
             arrayData.add(
                 CommentModel(
                     src = "https://www.girlsallaround.com/wp-content/uploads/2014/08/107371.jpg",
+                    name = "Eater destroyer",
                     comment = "I want to take to my home",
                     rating = 5
                 )

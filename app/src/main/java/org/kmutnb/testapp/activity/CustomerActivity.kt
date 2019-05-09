@@ -1,27 +1,32 @@
 package org.kmutnb.testapp.activity
 
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import android.os.Parcelable
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_customer.*
 import org.kmutnb.testapp.R
 import org.kmutnb.testapp.adapter.PagerAdapter
 import org.kmutnb.testapp.fragment.DetailCustomerFragment
 import org.kmutnb.testapp.fragment.DetailShopFragment
-import org.kmutnb.testapp.fragment.SettingFragment
 
 
 class CustomerActivity : AppCompatActivity() {
-    val TAG1 = "CUSTOMER"
-    val TAG2 = "DETAILSHOP"
-    val TAG3 = "LOGOUT"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(org.kmutnb.testapp.R.layout.activity_customer)
 
 
-        viewPagerUI.adapter =  PagerAdapter(supportFragmentManager)
+
+
+        val dataModel = intent.getParcelableExtra<Parcelable>("KEY_DATA_MODEL")
+        Log.e("data Model ==== ",dataModel.toString())
+        val commentModel = intent.getParcelableExtra<Parcelable>("KEY_DATA_COMMENT")
+        Log.e("comment Model ==== ",commentModel.toString())
+        viewPagerUI.adapter =  PagerAdapter(supportFragmentManager )
+
+
 
 //        btView.setOnNavigationItemSelectedListener {
 //            val adapter = PagerAdapter(supportFragmentManager)

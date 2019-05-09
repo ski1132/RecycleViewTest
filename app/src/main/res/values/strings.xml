@@ -13,4 +13,5 @@
     <string name="next_page">Next Page</string>
     <string name="comment">comment</string>
     <string name="hello_fragment">Hello fragment</string>
+    <string name="logout">Logout</string>
 </resources>
